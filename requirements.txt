@@ -1,0 +1,20 @@
+# Kiffusion - Image Generation Training Toolkit
+# Python 3.10+ required
+
+# Training Framework (brings torch, diffusers, transformers, accelerate, peft, etc.)
+simpletuner[cuda]
+
+# HuggingFace Integration
+huggingface_hub>=0.23.0
+
+# Experiment Tracking
+wandb>=0.17.0
+
+# Utilities (used by helper scripts)
+pyyaml>=6.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+rich>=13.7.0
+click>=8.1.0
+pillow>=10.0.0
+safetensors>=0.4.0
