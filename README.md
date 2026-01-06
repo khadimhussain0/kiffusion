@@ -8,7 +8,7 @@ A complete pipeline for training space & sci-fi themed LoRAs — from data colle
 |----------|------|
 | **Dataset** | [khadim-hussain/kiffusion-space-scifi](https://huggingface.co/datasets/khadim-hussain/kiffusion-space-scifi) |
 | **Kolors LoRA** | [khadim-hussain/spacevision-kolors-lora](https://huggingface.co/khadim-hussain/spacevision-kolors-lora) |
-| **FLUX.2-klein LoRA** | *Coming soon* |
+| **FLUX.2-klein LoRA** | [khadim-hussain/spacevision-flux2-lora](https://huggingface.co/khadim-hussain/spacevision-flux2-lora) |
 
 ## Features
 
@@ -78,7 +78,7 @@ quantize(pipe.transformer, weights=qint8)
 freeze(pipe.transformer)
 pipe.to("cuda")
 
-pipe.load_lora_weights("path/to/spacevision-flux2-lora")
+pipe.load_lora_weights("khadim-hussain/spacevision-flux2-lora")
 
 image = pipe(
     "spacevision, the Pillars of Creation in Eagle Nebula",
@@ -157,8 +157,8 @@ python scripts/inference_flux2.py \
   --prompt "spacevision, the Pillars of Creation in Eagle Nebula" \
   --output pillars.png
 
-# Compare base model vs LoRA (generates 10 side-by-side comparisons)
-python scripts/compare_flux2.py
+# Compare base model vs LoRA
+python scripts/compare_models.py
 ```
 
 **Inference options:**
@@ -185,9 +185,7 @@ kiffusion/
 │   ├── convert_dataset.py          # Format conversion
 │   ├── inference_kolors.py         # Kolors inference script
 │   ├── inference_flux2.py          # FLUX.2-klein inference script
-│   ├── compare_flux2.py            # FLUX.2 base vs LoRA comparison
-│   ├── compare_models.py           # Generic comparison script
-│   ├── push_lora_to_hf.py          # Model publishing
+│   ├── compare_models.py           # Base vs LoRA comparison
 │   └── export_hf.py                # Dataset publishing
 ├── output/                         # Checkpoints and trained LoRAs
 └── cache/                          # VAE and text embedding caches
