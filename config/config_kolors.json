@@ -5,7 +5,7 @@
   "pretrained_vae_model_name_or_path": "Kwai-Kolors/Kolors-diffusers",
   "variant": "fp16",
   "output_dir": "output/kolors-lora",
-  "data_backend_config": "config/multidatabackend.json",
+  "data_backend_config": "config/multidatabackend_kolors.json",
 
   "lora_rank": 16,
   "lora_alpha": 16,

@@ -25,6 +25,7 @@ env/
 .ipynb_checkpoints/
 
 # Datasets (large files - keep structure, ignore content)
+datasets/
 datasets/raw/
 datasets/processed/
 datasets/captions/
@@ -34,7 +35,7 @@ datasets/hf_upload/.cache/
 # Outputs
 output/
 wandb/
-
+flux2_comparison_images/
 # Model files
 *.ckpt
 *.safetensors

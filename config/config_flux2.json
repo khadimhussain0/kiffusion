@@ -1,0 +1,46 @@
+{
+  "model_type": "lora",
+  "model_family": "flux2",
+  "base_model_precision": "int8-quanto",
+  "quantize_via": "cpu",
+  "output_dir": "output/flux2-lora",
+  "data_backend_config": "config/multidatabackend_flux2.json",
+
+  "lora_rank": 16,
+  "lora_alpha": 16,
+  "lora_type": "standard",
+
+  "num_train_epochs": 3,
+  "max_train_steps": 0,
+  "train_batch_size": 1,
+  "vae_batch_size": 1,
+  "gradient_checkpointing": true,
+
+  "learning_rate": 1e-4,
+  "lr_scheduler": "cosine",
+  "lr_warmup_steps": 50,
+  "optimizer": "adamw_bf16",
+  "mixed_precision": "bf16",
+  "grad_clip_method": "value",
+  "flow_schedule_shift": 3,
+
+  "disable_bucket_pruning": true,
+  "caption_dropout_probability": 0.1,
+  "seed": 42,
+
+  "validation_resolution": "1024x1024",
+  "validation_guidance": 4.0,
+  "validation_num_inference_steps": 16,
+  "validation_seed": 42,
+  "validation_prompt": "spacevision, a breathtaking photograph of a nebula with vibrant colors and swirling cosmic dust",
+  "validation_disable_unconditional": true,
+  "validation_steps": 100,
+  "num_eval_images": 4,
+
+  "checkpoint_step_interval": 150,
+
+  "push_to_hub": false,
+  "report_to": "wandb",
+  "tracker_project_name": "kiffusion",
+  "tracker_run_name": "flux2-lora-spacevision-v1"
+}
